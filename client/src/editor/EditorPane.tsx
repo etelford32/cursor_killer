@@ -16,7 +16,7 @@ import { closeBrackets, closeBracketsKeymap } from "@codemirror/autocomplete";
 import { highlightSelectionMatches, searchKeymap } from "@codemirror/search";
 import { useStore } from "../state/store";
 import { languageFor } from "./languages";
-import { katanaHighlight, katanaTheme } from "./theme";
+import { omniHighlight, omniTheme } from "./theme";
 import { InlineEditOverlay, type InlineEditRequest } from "../components/InlineEdit";
 
 export function EditorPane() {
@@ -84,8 +84,8 @@ export function EditorPane() {
         ...foldKeymap,
         indentWithTab,
       ]),
-      katanaTheme,
-      katanaHighlight,
+      omniTheme,
+      omniHighlight,
       langCompartment.current.of(languageFor(path)),
       EditorView.updateListener.of((update) => {
         if (update.docChanged && currentPath.current) {
@@ -158,8 +158,8 @@ export function EditorPane() {
   if (!active) {
     return (
       <div className="editor-empty">
-        <div className="editor-empty-logo">刀</div>
-        <h2>Katana</h2>
+        <div className="editor-empty-logo">Ω</div>
+        <h2>Omni Code</h2>
         <p>The transparent AI code editor.</p>
         <ul>
           <li><kbd>Ctrl</kbd>+<kbd>P</kbd> open a file</li>

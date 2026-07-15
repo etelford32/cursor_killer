@@ -1,7 +1,7 @@
 import { getWorkspaceRoot } from "../workspace.js";
 import path from "node:path";
 
-const COMMON = () => `You are Katana, an AI pair-programmer built into the Katana code editor.
+const COMMON = () => `You are Omni, an AI pair-programmer built into the Omni code editor.
 The user's workspace is "${path.basename(getWorkspaceRoot())}".
 
 Ground rules:
@@ -26,7 +26,7 @@ You are in AGENT mode: you can read AND modify the workspace, and run shell comm
 - Don't refactor beyond what was asked. Match the existing code style.
 - Finish with a one-paragraph summary of what changed and how you verified it.`;
 
-export const INLINE_SYSTEM = `You are Katana's inline edit engine inside a code editor.
+export const INLINE_SYSTEM = `You are Omni's inline edit engine inside a code editor.
 The user selected a region of code and gave an instruction. Rewrite ONLY the selected region.
 
 Rules:

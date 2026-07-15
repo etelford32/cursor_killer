@@ -1,11 +1,11 @@
-# 刀 Katana
+# Ω Omni Code
 
 **A fast, transparent AI code editor — built as a direct competitor to Cursor.**
 
-Katana keeps the ideas that made Cursor work (agent mode, codebase-aware chat,
+Omni Code keeps the ideas that made Cursor work (agent mode, codebase-aware chat,
 inline AI edits) and fixes the parts that don't:
 
-| | Cursor | Katana |
+| | Cursor | Omni Code |
 |---|---|---|
 | Agent transparency | opaque context assembly | every tool call streams live; every edit is a reviewable diff |
 | Undo an agent run | limited | per-file **Revert** from automatic checkpoints |
@@ -21,13 +21,13 @@ npm install
 npm run dev            # server on :3100, UI on http://localhost:5180
 ```
 
-Open http://localhost:5180. Without an API key Katana runs in **mock mode** —
+Open http://localhost:5180. Without an API key Omni Code runs in **mock mode** —
 the full UI (streaming, tool cards, diff review, revert) works with a scripted
 demo agent. Add your Anthropic API key in **Settings** (gear icon) to switch to
-the real thing. The key is stored server-side in `~/.katana/config.json` and
+the real thing. The key is stored server-side in `~/.omnicode/config.json` and
 never sent to the browser. You can also `export ANTHROPIC_API_KEY=…` instead.
 
-To edit a different project: `KATANA_DIR=/path/to/project npm run dev`.
+To edit a different project: `OMNI_DIR=/path/to/project npm run dev`.
 
 ## Features
 
@@ -35,7 +35,7 @@ To edit a different project: `KATANA_DIR=/path/to/project npm run dev`.
   edits files (`write_file`, `str_replace`), and runs shell commands. Every
   step streams into the panel as it happens. Every file edit becomes a diff
   card with **Accept / Revert**; reverting restores the exact pre-run content
-  from an automatic checkpoint (`.katana/checkpoints/`).
+  from an automatic checkpoint (`.omnicode/checkpoints/`).
 - **Chat mode** — codebase Q&A with read-only tools. Answers cite real
   `path:line` locations from files it actually opened.
 - **Inline edit (`Ctrl+K`)** — select code, describe the change, review the

@@ -8,7 +8,7 @@ export interface ModelConfig {
   inline: string;
 }
 
-export interface KatanaConfig {
+export interface OmniConfig {
   apiKey?: string;
   models: ModelConfig;
 }
@@ -19,7 +19,7 @@ export const AVAILABLE_MODELS = [
   "claude-haiku-4-5",
 ];
 
-const DEFAULTS: KatanaConfig = {
+const DEFAULTS: OmniConfig = {
   models: {
     agent: "claude-opus-4-8",
     chat: "claude-opus-4-8",
@@ -27,10 +27,10 @@ const DEFAULTS: KatanaConfig = {
   },
 };
 
-const CONFIG_DIR = path.join(os.homedir(), ".katana");
+const CONFIG_DIR = path.join(os.homedir(), ".omnicode");
 const CONFIG_PATH = path.join(CONFIG_DIR, "config.json");
 
-export function loadConfig(): KatanaConfig {
+export function loadConfig(): OmniConfig {
   try {
     const raw = JSON.parse(fs.readFileSync(CONFIG_PATH, "utf8"));
     return {
@@ -43,9 +43,9 @@ export function loadConfig(): KatanaConfig {
   }
 }
 
-export function saveConfig(update: Partial<KatanaConfig>): KatanaConfig {
+export function saveConfig(update: Partial<OmniConfig>): OmniConfig {
   const current = loadConfig();
-  const next: KatanaConfig = {
+  const next: OmniConfig = {
     ...current,
     ...update,
     models: { ...current.models, ...(update.models ?? {}) },

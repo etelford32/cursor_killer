@@ -27,7 +27,7 @@ export function stripFence(text: string): string {
 export async function runInlineEdit(req: InlineRequest, emit: InlineEmit, signal: AbortSignal): Promise<void> {
   if (isMockMode()) {
     const marker = req.selection.includes("\n") ? "\n" : " ";
-    const result = `${req.selection}${marker}/* Katana mock edit — instruction: ${req.instruction.slice(0, 80)} (add an API key in Settings for real edits) */`;
+    const result = `${req.selection}${marker}/* Omni mock edit — instruction: ${req.instruction.slice(0, 80)} (add an API key in Settings for real edits) */`;
     for (const chunk of result.match(/.{1,24}/gs) ?? []) {
       emit({ type: "text", text: chunk });
       await new Promise((r) => setTimeout(r, 10));

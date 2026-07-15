@@ -5,7 +5,7 @@ import { getWorkspaceRoot, resolveSafe } from "./workspace.js";
 /**
  * Checkpoints capture the pre-edit state of every file the agent touches
  * during a run, so any change can be reverted per-file or all at once.
- * Stored under <workspace>/.katana/checkpoints/<runId>/.
+ * Stored under <workspace>/.omnicode/checkpoints/<runId>/.
  */
 
 interface FileSnapshot {
@@ -22,7 +22,7 @@ interface CheckpointManifest {
 }
 
 function checkpointDir(runId: string): string {
-  return path.join(getWorkspaceRoot(), ".katana", "checkpoints", runId);
+  return path.join(getWorkspaceRoot(), ".omnicode", "checkpoints", runId);
 }
 
 function manifestPath(runId: string): string {

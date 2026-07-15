@@ -22,10 +22,10 @@ import { AVAILABLE_MODELS, isMockMode, loadConfig, saveConfig } from "./config.j
 
 const PORT = Number(process.env.PORT) || 3100;
 
-// Workspace root: --dir flag > KATANA_DIR env > cwd
+// Workspace root: --dir flag > OMNI_DIR env > cwd
 const dirArg = process.argv.indexOf("--dir");
 setWorkspaceRoot(
-  dirArg !== -1 ? process.argv[dirArg + 1] : process.env.KATANA_DIR || process.cwd(),
+  dirArg !== -1 ? process.argv[dirArg + 1] : process.env.OMNI_DIR || process.cwd(),
 );
 
 const app = express();
@@ -191,7 +191,7 @@ const wss = new WebSocketServer({ server, path: "/ws/term" });
 wss.on("connection", (ws) => void attachTerminal(ws));
 
 server.listen(PORT, () => {
-  console.log(`[katana] server on http://localhost:${PORT}`);
-  console.log(`[katana] workspace: ${getWorkspaceRoot()}`);
-  console.log(`[katana] ai: ${isMockMode() ? "MOCK MODE (no API key)" : "Claude API"}`);
+  console.log(`[omni] server on http://localhost:${PORT}`);
+  console.log(`[omni] workspace: ${getWorkspaceRoot()}`);
+  console.log(`[omni] ai: ${isMockMode() ? "MOCK MODE (no API key)" : "Claude API"}`);
 });

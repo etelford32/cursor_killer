@@ -1,15 +1,15 @@
 {
-  "name": "katana",
+  "name": "omni-code",
   "private": true,
   "version": "0.1.0",
-  "description": "Katana — a fast, transparent AI code editor",
+  "description": "Omni — a fast, transparent AI code editor",
   "workspaces": [
     "server",
     "client"
   ],
   "scripts": {
     "dev": "npm run dev:server & npm run dev:client & wait",
-    "dev:server": "KATANA_DIR=\"${KATANA_DIR:-$PWD}\" npm run dev --workspace=server",
+    "dev:server": "OMNI_DIR=\"${OMNI_DIR:-$PWD}\" npm run dev --workspace=server",
     "dev:client": "npm run dev --workspace=client",
     "build": "npm run build --workspace=client && npm run build --workspace=server",
     "start": "npm run start --workspace=server",

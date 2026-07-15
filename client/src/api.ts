@@ -1,4 +1,4 @@
-// REST + SSE client for the Katana server.
+// REST + SSE client for the Omni server.
 
 export interface TreeNode {
   name: string;

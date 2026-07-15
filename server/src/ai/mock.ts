@@ -82,9 +82,9 @@ export async function mockTurn(
   if (step === 1) {
     const text = await streamText("Now I'll make a real, revertable file edit so you can try the diff review flow.\n\n", emit);
     const content = [
-      "# Katana agent demo",
+      "# Omni agent demo",
       "",
-      "This file was created by Katana's **mock agent** to demonstrate the edit → review flow.",
+      "This file was created by Omni's **mock agent** to demonstrate the edit → review flow.",
       "",
       `Your request was: “${prompt.slice(0, 200)}”`,
       "",
@@ -94,13 +94,13 @@ export async function mockTurn(
       "",
     ].join("\n");
     return {
-      content: [text, toolUse("write_file", { path: "KATANA_DEMO.md", content })],
+      content: [text, toolUse("write_file", { path: "OMNI_DEMO.md", content })],
       stopReason: "tool_use",
     };
   }
   const text = await streamText(
     [
-      "Done. I created `KATANA_DEMO.md` — the diff card above shows exactly what changed.",
+      "Done. I created `OMNI_DEMO.md` — the diff card above shows exactly what changed.",
       "",
       "- Click **Revert** on the card to restore the pre-run state from the checkpoint.",
       "- In a real session I would explore with grep/glob, edit multiple files, and run your tests to verify.",

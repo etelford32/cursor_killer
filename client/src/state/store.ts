@@ -44,7 +44,7 @@ interface OpenFile {
   savedContent: string;
 }
 
-interface KatanaState {
+interface OmniState {
   // filesystem
   tree: TreeNode | null;
   refreshTree: () => Promise<void>;
@@ -85,7 +85,7 @@ interface KatanaState {
   aiAbort: AbortController | null;
 }
 
-export const useStore = create<KatanaState>((set, get) => ({
+export const useStore = create<OmniState>((set, get) => ({
   tree: null,
   refreshTree: async () => {
     set({ tree: await api.tree() });

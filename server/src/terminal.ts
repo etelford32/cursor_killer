@@ -59,7 +59,7 @@ export async function attachTerminal(ws: WebSocket): Promise<void> {
   }
 
   // Pipe fallback — no TTY semantics, but commands still run.
-  send({ type: "info", data: "[katana] node-pty unavailable — running in pipe mode\r\n" });
+  send({ type: "info", data: "[omni] node-pty unavailable — running in pipe mode\r\n" });
   const child: ChildProcessWithoutNullStreams = spawn("bash", ["-i"], {
     cwd,
     env: { ...process.env, TERM: "dumb" },

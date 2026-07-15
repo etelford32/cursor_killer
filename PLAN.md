@@ -1,11 +1,11 @@
-# Katana — an AI code editor built to beat Cursor
+# Omni Code — an AI code editor built to beat Cursor
 
 ## Context
 
 Cursor proved that an AI-native editor is the right product, but it carries real baggage:
 it's a heavyweight VS Code fork, its agent behavior is opaque (hidden context assembly,
 background indexing), it requires a subscription with request caps and token markup, and
-its embeddings-based codebase index goes stale. Katana is a ground-up, web-first AI editor
+its embeddings-based codebase index goes stale. Omni Code is a ground-up, web-first AI editor
 that keeps the good ideas (agent mode, codebase chat, inline edits) and fixes the rest.
 
 ## Product positioning — improvements over Cursor
@@ -78,7 +78,7 @@ cursor_killer/
 
 - All FS ops resolved against the workspace root; path traversal rejected.
 - `run_command` executes inside the workspace dir; commands and output shown in UI.
-- API key stored server-side in `~/.katana/config.json` (never sent to the browser).
+- API key stored server-side in `~/.omnicode/config.json` (never sent to the browser).
 
 ## Milestones
 

@@ -2,9 +2,9 @@ import { EditorView } from "@codemirror/view";
 import { HighlightStyle, syntaxHighlighting } from "@codemirror/language";
 import { tags as t } from "@lezer/highlight";
 
-// Katana dark — a restrained slate/steel palette with a single red accent.
+// Omni dark — a restrained slate/steel palette with a single red accent.
 
-export const katanaTheme = EditorView.theme(
+export const omniTheme = EditorView.theme(
   {
     "&": {
       backgroundColor: "#101418",
@@ -53,7 +53,7 @@ export const katanaTheme = EditorView.theme(
   { dark: true },
 );
 
-export const katanaHighlight = syntaxHighlighting(
+export const omniHighlight = syntaxHighlighting(
   HighlightStyle.define([
     { tag: [t.keyword, t.moduleKeyword, t.controlKeyword], color: "#c792ea" },
     { tag: [t.name, t.deleted, t.character, t.macroName], color: "#d7dde3" },

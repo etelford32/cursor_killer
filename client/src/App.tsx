@@ -43,7 +43,7 @@ export default function App() {
   return (
     <div className="app">
       <div className="titlebar">
-        <span className="titlebar-brand">刀 Katana</span>
+        <span className="titlebar-brand">Ω Omni Code</span>
         <span className="titlebar-sub">the transparent AI editor</span>
         <span className="spacer" />
         <button className="icon-btn" title="Command palette (Ctrl+P)" onClick={() => setShowPalette(true)}>

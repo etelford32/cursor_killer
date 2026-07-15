@@ -75,7 +75,7 @@ function AssistantMessage({ item }: { item: Extract<ChatItem, { kind: "assistant
   return (
     <div className="msg assistant" data-testid="assistant-msg">
       <div className="msg-meta">
-        <span className="msg-author">Katana</span>
+        <span className="msg-author">Omni</span>
         <span className="msg-model">{item.mock ? "mock" : item.model}</span>
         {item.status === "streaming" && <span className="msg-streaming">working…</span>}
         {item.usage && item.status === "done" && (
@@ -155,13 +155,13 @@ export function AIPanel() {
             <p><strong>{aiMode === "agent" ? "Agent mode" : "Chat mode"}</strong></p>
             {aiMode === "agent" ? (
               <p>
-                Give Katana a task. It explores your codebase, edits files, and runs
+                Give Omni a task. It explores your codebase, edits files, and runs
                 commands — every step streams here, and every edit is a diff you can
                 accept or revert.
               </p>
             ) : (
               <p>
-                Ask about your codebase. Katana reads real files with grep/glob/read —
+                Ask about your codebase. Omni reads real files with grep/glob/read —
                 no stale index — and cites paths it actually opened.
               </p>
             )}

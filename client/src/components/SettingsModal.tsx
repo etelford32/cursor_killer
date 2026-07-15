@@ -55,8 +55,8 @@ export function SettingsModal() {
           autoComplete="off"
         />
         <p className="field-hint">
-          Stored server-side in <code>~/.katana/config.json</code> — never sent to the browser.
-          Katana calls the Claude API directly with your key: no middleman, no markup, no request caps.
+          Stored server-side in <code>~/.omnicode/config.json</code> — never sent to the browser.
+          Omni calls the Claude API directly with your key: no middleman, no markup, no request caps.
         </p>
 
         <div className="model-grid">

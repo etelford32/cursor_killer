@@ -174,7 +174,7 @@ export async function executeTool(
         const abs = resolveSafe(rel);
         const entries = await fsp.readdir(abs, { withFileTypes: true });
         const listing = entries
-          .filter((e) => e.name !== "node_modules" && e.name !== ".git" && e.name !== ".katana")
+          .filter((e) => e.name !== "node_modules" && e.name !== ".git" && e.name !== ".omnicode")
           .map((e) => (e.isDirectory() ? `${e.name}/` : e.name))
           .sort()
           .join("\n");

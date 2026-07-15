@@ -12,7 +12,7 @@ export function StatusBar() {
 
   return (
     <div className="status-bar" data-testid="status-bar">
-      <span className="status-item brand">刀 katana</span>
+      <span className="status-item brand">Ω omni</span>
       {active && (
         <span className="status-item">
           {active}
