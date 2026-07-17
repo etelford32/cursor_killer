@@ -5,7 +5,8 @@
   "description": "Omni — a fast, transparent AI code editor",
   "workspaces": [
     "server",
-    "client"
+    "client",
+    "desktop"
   ],
   "scripts": {
     "dev": "npm run dev:server & npm run dev:client & wait",
@@ -13,6 +14,9 @@
     "dev:client": "npm run dev --workspace=client",
     "build": "npm run build --workspace=client && npm run build --workspace=server",
     "start": "npm run start --workspace=server",
-    "typecheck": "npm run typecheck --workspace=server && npm run typecheck --workspace=client"
+    "typecheck": "npm run typecheck --workspace=server && npm run typecheck --workspace=client",
+    "build:desktop": "npm run build --workspace=client && node scripts/bundle-server.mjs",
+    "desktop": "npm run build:desktop && npm run start --workspace=desktop",
+    "desktop:dist": "npm run build:desktop && npm run dist:linux --workspace=desktop"
   }
 }

@@ -29,6 +29,25 @@ never sent to the browser. You can also `export ANTHROPIC_API_KEY=…` instead.
 
 To edit a different project: `OMNI_DIR=/path/to/project npm run dev`.
 
+## Desktop app
+
+Omni Code also runs as an installable Electron app — same server, same UI,
+plus a native **File → Open Folder** dialog (`Ctrl+Shift+O`), a remembered
+last workspace, and `omni-code /path/to/project` CLI-style launch.
+
+```bash
+npm run desktop        # build client + server bundle, launch the app
+npm run desktop:dist   # package installers (AppImage/deb on Linux)
+```
+
+Installers land in `desktop/release/`. The desktop shell is ~200 lines in
+`desktop/main.cjs`: it spawns the bundled server on a free port using
+Electron's own Node runtime and points the window at it.
+
+> On networks that block GitHub release downloads, `npm install` can't fetch
+> the Electron binary — run `ELECTRON_SKIP_BINARY_DOWNLOAD=1 npm install` to
+> install everything else (web mode is unaffected).
+
 ## Features
 
 - **Agent mode** — give it a task; it explores with `grep`/`glob`/`read`,

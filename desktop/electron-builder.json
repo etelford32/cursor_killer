@@ -1,0 +1,23 @@
+{
+  "appId": "dev.omnicode.app",
+  "productName": "Omni Code",
+  "directories": {
+    "output": "release"
+  },
+  "files": [
+    "main.cjs",
+    "server-dist/**",
+    "client-dist/**"
+  ],
+  "linux": {
+    "target": ["AppImage", "deb"],
+    "category": "Development"
+  },
+  "mac": {
+    "target": ["dmg"],
+    "category": "public.app-category.developer-tools"
+  },
+  "win": {
+    "target": ["nsis"]
+  }
+}

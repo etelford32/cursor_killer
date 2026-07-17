@@ -4,3 +4,6 @@ dist/
 .DS_Store
 .omnicode/
 .env
+desktop/server-dist/
+desktop/client-dist/
+desktop/release/
