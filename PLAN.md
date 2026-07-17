@@ -89,8 +89,13 @@ cursor_killer/
 4. **M4 — Inline Cmd+K** + command palette + settings (key, models).
 5. **M5 — Terminal panel** + polish + README.
 
+6. **M6 — Desktop app** ✅: Electron shell (`desktop/`) — bundled server spawned on
+   Electron's Node runtime, native Open Folder dialog, remembered workspace,
+   electron-builder packaging (AppImage/deb/dmg/nsis).
+
 Out of scope for MVP: tab autocomplete (needs dedicated low-latency infra), multi-provider
-backends, desktop packaging, collaboration. All have a clear seam to add later.
+backends, collaboration. All have a clear seam to add later. A Tauri shell remains an
+option for a slimmer binary once the Rust toolchain cost is justified.
 
 ## Verification
 

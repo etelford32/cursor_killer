@@ -178,8 +178,14 @@ app.post("/api/revert", (req, res) => {
 // ---------- static client (production) ----------
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const clientDist = path.resolve(__dirname, "../../client/dist");
-if (fs.existsSync(clientDist)) {
+// Candidate locations for the built client, in priority order:
+// explicit override > packaged desktop layout (sibling client-dist) > repo layout.
+const clientDist = [
+  process.env.OMNI_CLIENT_DIST,
+  path.resolve(__dirname, "../client-dist"),
+  path.resolve(__dirname, "../../client/dist"),
+].find((p) => p && fs.existsSync(p));
+if (clientDist) {
   app.use(express.static(clientDist));
   app.get("*", (_req, res) => res.sendFile(path.join(clientDist, "index.html")));
 }
